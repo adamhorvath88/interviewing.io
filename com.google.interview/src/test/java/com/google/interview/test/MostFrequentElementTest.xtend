@@ -1,6 +1,6 @@
 package com.google.interview.test
 
-import com.google.interview.MostFrequent
+import com.google.interview.MostFrequentElement
 import com.google.interview.impl.NaiveMostFrequent
 import java.util.Collection
 import java.util.Optional
@@ -11,7 +11,7 @@ import static org.junit.Assert.assertFalse
 import static org.junit.Assert.assertTrue
 
 class MostFrequentElementTest {
-	MostFrequent<Integer> mostFrequent = new NaiveMostFrequent
+	MostFrequentElement<Integer> mostFrequent = new NaiveMostFrequent
 
 	@Test def emptyArray() {
 		val ints = #[]

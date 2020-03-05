@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.function.BiFunction;
 
-import org.eclipse.internal.xtend.util.Pair;
+import org.eclipse.xtext.xbase.lib.Pair;
 
 /**
  * <h2>Problem 2:</h2>

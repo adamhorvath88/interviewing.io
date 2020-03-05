@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import org.eclipse.internal.xtend.util.Pair;
+import org.eclipse.xtext.xbase.lib.Pair;
 
 import com.google.interview.SumOfTwoElements;
 
