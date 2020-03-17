@@ -4,8 +4,10 @@
 	<groupId>com.google</groupId>
 	<artifactId>com.google.interview</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<build>
-		<sourceDirectory>src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -22,11 +24,9 @@
 				<executions>
 					<execution>
 						<goals>
-							<goal>compile</goal>
 							<goal>testCompile</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/xtend-gen/main</outputDirectory>
 							<testOutputDirectory>${project.build.directory}/xtend-gen/test</testOutputDirectory>
 						</configuration>
 					</execution>
