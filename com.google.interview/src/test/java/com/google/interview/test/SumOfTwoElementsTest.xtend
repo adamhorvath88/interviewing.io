@@ -5,7 +5,7 @@ import com.google.interview.impl.NaiveSumOfTwoElements
 import org.junit.Test
 
 import static org.junit.Assert.assertEquals
-import static org.junit.Assert.assertFalse
+import static org.junit.Assert.assertTrue
 
 class SumOfTwoElementsTest {
 	SumOfTwoElements<Integer> sumOfTwo = new NaiveSumOfTwoElements
@@ -17,7 +17,7 @@ class SumOfTwoElementsTest {
 		val sum = 0
 		val result = sumOfTwo.apply(ints, sum)
 
-		assertEquals(3, result.get.size)
+		assertEquals(3, result.size)
 	}
 
 	@Test
@@ -27,7 +27,7 @@ class SumOfTwoElementsTest {
 		val sum = 9
 		val result = sumOfTwo.apply(ints, sum)
 
-		assertFalse(result.present)
+		assertTrue(result.empty)
 	}
 
 	@Test
@@ -37,7 +37,7 @@ class SumOfTwoElementsTest {
 		val sum = 1
 		val result = sumOfTwo.apply(ints, sum)
 
-		assertFalse(result.present)
+		assertTrue(result.empty)
 	}
 
 	@Test
@@ -47,17 +47,17 @@ class SumOfTwoElementsTest {
 		val sum = 0
 		val result = sumOfTwo.apply(ints, sum)
 
-		assertFalse(result.present)
+		assertTrue(result.empty)
 	}
 
 	@Test
 	def singleSolution() {
 		val ints = #[13, 42]
 
-		val sum = 57
+		val sum = 55
 		val result = sumOfTwo.apply(ints, sum)
 
-		assertEquals(result.get.get(0), #{13, 42})
+		assertEquals(result.get(0), 13 -> 42)
 	}
 
 	@Test
@@ -67,6 +67,6 @@ class SumOfTwoElementsTest {
 		val sum = 9
 		val result = sumOfTwo.apply(ints, sum)
 
-		assertFalse(result.present)
+		assertTrue(result.empty)
 	}
 }
