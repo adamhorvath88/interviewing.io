@@ -21,7 +21,7 @@ class SumOfTwoElementsTest {
 	}
 
 	@Test
-	def notMakingUp() {
+	def tooSmallElements() {
 		val ints = #[0, 1, 2, 3]
 
 		val sum = 9
@@ -30,6 +30,19 @@ class SumOfTwoElementsTest {
 		assertTrue(result.empty)
 	}
 
+	@Test
+	def negativeElementsWithPositiveSum() {
+		val ints = #[-10, -5, 0, -15]
+
+		val sum = 15
+		val result = sumOfTwo.apply(ints, sum)
+
+		assertTrue(result.empty)
+	}
+
+	/**
+	 * Single element is not enough for addition.
+	 */
 	@Test
 	def singleElement() {
 		val ints = #[1]
@@ -61,12 +74,32 @@ class SumOfTwoElementsTest {
 	}
 
 	@Test
-	def tooBigNumbers() {
+	def tooBigElements() {
 		val ints = #[10, 9, 20, 30]
 
 		val sum = 9
 		val result = sumOfTwo.apply(ints, sum)
 
 		assertTrue(result.empty)
+	}
+
+	@Test
+	def positiveLimit() {
+		val ints = #[Integer.MAX_VALUE - 1, 1]
+
+		val sum = Integer.MAX_VALUE
+		val result = sumOfTwo.apply(ints, sum)
+
+		assertEquals(result.get(0), (Integer.MAX_VALUE - 1) -> 1)
+	}
+
+	@Test
+	def negativeLimit() {
+		val ints = #[Integer.MIN_VALUE + 1, -1]
+
+		val sum = Integer.MIN_VALUE
+		val result = sumOfTwo.apply(ints, sum)
+
+		assertEquals(result.get(0), (Integer.MIN_VALUE + 1) -> -1)
 	}
 }

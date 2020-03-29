@@ -20,6 +20,9 @@ class MostFrequentElementTest {
 		assertFalse(mostFrequentNumber.present)
 	}
 
+	/**
+	 * If two or more elements are equally frequent then any of them can be returned.
+	 */
 	@Test def equalFrequency() {
 		val ints = #[-1, 0, 1]
 		val mostFrequentNumber = mostFrequent.apply(ints)
